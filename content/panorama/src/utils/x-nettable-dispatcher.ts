@@ -6,10 +6,15 @@ import 'panorama-polyfill-x/lib/console';
         const content = received_object.data;
 
         // 如果数据不是string，那么直接dispatch
-        if (typeof content != 'string' && content.table_name != null) {
-            dispatch(content.table_name, content.key, content.content);
-            return;
+        if (typeof content != 'string') {
+            if(content.table_name != null){
+                dispatch(content.table_name, content.key, content.content);
+                return;
+            }else{
+                return;
+            }
         }
+
 
         // 如果字符串不是以#开头的，那么直接反序列化之后dispatch
         // 避免因为lua判断大小和json判断大小直接出现问题

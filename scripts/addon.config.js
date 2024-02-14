@@ -1,5 +1,5 @@
 /** 项目名称 */
-let addon_name = 'x_template'; // 必须为字母开头，而且只能包含小写字母、数字和下划线
+let addon_name = 'x_template_test';
 
 try {
     addon_name = require('./.test/addon_name');
@@ -46,7 +46,7 @@ assert(
     'addon_name 必须为字母开头，而且只能包含小写字母、数字和下划线，请到 addon.config.js 修改\nplease change addon_name in addon.config.js to match /^[a-z][a-z0-9_]*$/'
 );
 assert(
-    addon_name !== 'x_template',
+    addon_name !== 'x_template_tes',
     '请到 scripts/addon.config.js 修改 addon_name 为你的项目名称，不能为 x_template\nplease change addon_name in addon.config.js to your project name, not x_template'
 );
 
